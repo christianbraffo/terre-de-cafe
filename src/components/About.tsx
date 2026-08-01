@@ -1,6 +1,13 @@
 import Image from "next/image";
 import CoffeePattern from "@/components/CoffeePattern";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import CountUp from "@/components/CountUp";
+
+const stats = [
+  { end: 50, suffix: "+", label: "Entreprises accompagnées" },
+  { end: 8, suffix: " ans", label: "D'expertise OCS" },
+  { end: 100, suffix: "%", label: "Qualité premium" },
+];
 
 export default function About() {
   return (
@@ -49,14 +56,10 @@ export default function About() {
             </div>
 
             <div className="mt-10 grid grid-cols-3 gap-6 border-t border-brown-100 pt-10">
-              {[
-                { value: "100%", label: "Qualité premium" },
-                { value: "OCS", label: "Service complet" },
-                { value: "CI", label: "Made in Abidjan" },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label}>
                   <p className="font-serif text-3xl font-bold text-brown-600">
-                    {stat.value}
+                    <CountUp end={stat.end} suffix={stat.suffix} />
                   </p>
                   <p className="mt-1 text-sm text-black/60">{stat.label}</p>
                 </div>

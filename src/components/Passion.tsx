@@ -69,17 +69,17 @@ export default function Passion() {
             {moments.map((moment, i) => (
               <AnimateOnScroll key={moment.label} direction="up" delay={i * 100}>
               <div
-                className={`relative overflow-hidden rounded-2xl ${i % 2 === 1 ? "mt-8" : ""}`}
+                className={`group relative overflow-hidden rounded-2xl ${i % 2 === 1 ? "mt-8" : ""}`}
               >
                 <div className="relative aspect-square">
                   <Image
                     src={moment.image}
                     alt={moment.alt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute inset-0 bg-black/30 transition-colors duration-500 group-hover:bg-black/20" />
                   <p className="absolute bottom-4 left-4 font-serif text-lg font-semibold text-white">
                     {moment.label}
                   </p>

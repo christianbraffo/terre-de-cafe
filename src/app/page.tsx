@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Process from "@/components/Process";
 import Partners from "@/components/Partners";
 import Passion from "@/components/Passion";
 import FAQ from "@/components/FAQ";
@@ -14,9 +15,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <AnimateOnScroll immediate direction="up">
-          <Hero />
-        </AnimateOnScroll>
+        <Hero />
 
         <AnimateOnScroll direction="left">
           <About />
@@ -24,6 +23,10 @@ export default function Home() {
 
         <AnimateOnScroll direction="up">
           <Services />
+        </AnimateOnScroll>
+
+        <AnimateOnScroll direction="up">
+          <Process />
         </AnimateOnScroll>
 
         <AnimateOnScroll direction="none" delay={100}>

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const navLinks = [
   { href: "#accueil", label: "Accueil" },
   { href: "#a-propos", label: "À propos" },
   { href: "#services", label: "Services" },
+  { href: "#parcours", label: "Parcours" },
   { href: "#passion", label: "Passion" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
@@ -14,17 +15,41 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (open) setScrolled(true);
+  }, [open]);
+
+  const solid = scrolled || open;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        solid
+          ? "border-b border-black/10 bg-white/95 shadow-sm backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8 lg:py-4">
         <a href="#accueil" className="group flex items-center gap-3">
           <Image
-            src="/logo.png"
+            src={solid ? "/logo.png" : "/logo-white.png"}
             alt="Logo TERREDECAFE"
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full object-cover transition-opacity group-hover:opacity-90"
+            width={64}
+            height={64}
+            className={`h-14 w-14 rounded-full object-cover transition-all md:h-16 md:w-16 ${
+              solid
+                ? "ring-0"
+                : "ring-2 ring-white/40 bg-white/10"
+            } group-hover:opacity-90`}
             priority
           />
         </a>
@@ -34,7 +59,11 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-black/70 transition-colors hover:text-brown-600"
+              className={`text-sm font-medium transition-colors ${
+                solid
+                  ? "text-black/70 hover:text-brown-600"
+                  : "text-white/85 hover:text-white"
+              }`}
             >
               {link.label}
             </a>
@@ -54,13 +83,19 @@ export default function Header() {
           aria-label="Menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-black transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+            className={`block h-0.5 w-6 transition-transform ${
+              solid ? "bg-black" : "bg-white"
+            } ${open ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-black transition-opacity ${open ? "opacity-0" : ""}`}
+            className={`block h-0.5 w-6 transition-opacity ${
+              solid ? "bg-black" : "bg-white"
+            } ${open ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-black transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`block h-0.5 w-6 transition-transform ${
+              solid ? "bg-black" : "bg-white"
+            } ${open ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </div>

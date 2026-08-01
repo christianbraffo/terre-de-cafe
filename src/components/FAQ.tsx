@@ -77,7 +77,7 @@ export default function FAQ() {
                 >
                   <span className="font-medium text-black">{faq.question}</span>
                   <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brown-600 text-white transition-transform ${isOpen ? "rotate-45" : ""}`}
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brown-600 text-white transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
                   >
                     <svg
                       className="h-4 w-4"
@@ -95,11 +95,17 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="border-t border-brown-100 px-6 pb-5 pt-4">
-                    <p className="leading-relaxed text-black/70">{faq.answer}</p>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="border-t border-brown-100 px-6 pb-5 pt-4">
+                      <p className="leading-relaxed text-black/70">{faq.answer}</p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
               </AnimateOnScroll>
             );

@@ -56,7 +56,7 @@ export default function Services() {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <AnimateOnScroll key={service.title} direction="up" delay={index * 100}>
+            <AnimateOnScroll key={service.title} direction="up" delay={index * 140}>
             <article
               className="group overflow-hidden rounded-2xl bg-black/40 transition-transform hover:-translate-y-1"
             >
