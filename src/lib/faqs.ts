@@ -32,6 +32,6 @@ export const faqs = [
   {
     question: "Comment obtenir un devis personnalisé ?",
     answer:
-      "Remplissez le formulaire de contact en bas de page ou écrivez-nous à contact@terredecafe.ci. Notre équipe vous recontactera rapidement pour comprendre vos besoins et vous proposer une solution sur mesure.",
+      "Remplissez le formulaire de contact en bas de page, écrivez-nous à client@terredecafe.com ou appelez le 07 07 98 48 88. Notre équipe vous recontactera rapidement pour comprendre vos besoins et vous proposer une solution sur mesure.",
   },
 ] as const;

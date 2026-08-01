@@ -57,18 +57,18 @@ export default function Footer() {
               <li>Abidjan, Côte d&apos;Ivoire</li>
               <li>
                 <a
-                  href="mailto:contact@terredecafe.ci"
+                  href="mailto:client@terredecafe.com"
                   className="transition-colors hover:text-brown-300"
                 >
-                  contact@terredecafe.ci
+                  client@terredecafe.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+2250000000000"
+                  href="tel:+2250707984888"
                   className="transition-colors hover:text-brown-300"
                 >
-                  +225 00 00 00 00 00
+                  07 07 98 48 88
                 </a>
               </li>
             </ul>

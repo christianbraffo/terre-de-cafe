@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "bchrist.junior@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "client@terredecafe.com";
 const FROM_EMAIL =
-  process.env.EMAIL_FROM ?? "TERREDECAFE <contact@terredecafe.ci>";
+  process.env.EMAIL_FROM ?? "TERREDECAFE <client@terredecafe.com>";
 
 function escapeHtml(value: string) {
   return value

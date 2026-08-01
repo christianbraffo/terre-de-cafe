@@ -21,6 +21,7 @@ export default function JsonLd() {
     ],
     description: siteConfig.description,
     email: siteConfig.email,
+    telephone: siteConfig.phoneHref.replace("tel:", ""),
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.address.locality,
@@ -42,6 +43,7 @@ export default function JsonLd() {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: siteConfig.email,
+      telephone: siteConfig.phoneHref.replace("tel:", ""),
       availableLanguage: ["French"],
       areaServed: "CI",
     },

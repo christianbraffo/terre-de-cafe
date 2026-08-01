@@ -7,7 +7,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://terredecafe.ci",
   locale: "fr_CI",
   language: "fr",
-  email: "contact@terredecafe.ci",
+  email: "client@terredecafe.com",
+  phone: "0707984888",
+  phoneDisplay: "07 07 98 48 88",
+  phoneHref: "tel:+2250707984888",
   address: {
     locality: "Abidjan",
     country: "CI",
