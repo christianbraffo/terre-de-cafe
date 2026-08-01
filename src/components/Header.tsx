@@ -42,7 +42,7 @@ export default function Header() {
         <a href="#accueil" className="group flex items-center gap-3">
           <Image
             src={solid ? "/logo.png" : "/logo-white.png"}
-            alt="Logo TERREDECAFE"
+            alt="TERREDECAFE — Café de bureau à Abidjan"
             width={64}
             height={64}
             className={`h-14 w-14 rounded-full object-cover transition-all md:h-16 md:w-16 ${
@@ -54,7 +54,7 @@ export default function Header() {
           />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Navigation principale">
           {navLinks.map((link) => (
             <a
               key={link.href}

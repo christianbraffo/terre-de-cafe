@@ -1,0 +1,31 @@
+export const siteConfig = {
+  name: "TERREDECAFE",
+  legalName: "TERREDECAFE",
+  tagline: "Café de bureau à Abidjan",
+  description:
+    "Fournisseur de services de café de bureau (OCS) à Abidjan. Matériel premium, café d'exception et service expert pour le bonheur de vos équipes en Côte d'Ivoire.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://terredecafe.ci",
+  locale: "fr_CI",
+  language: "fr",
+  email: "contact@terredecafe.ci",
+  address: {
+    locality: "Abidjan",
+    country: "CI",
+    countryName: "Côte d'Ivoire",
+  },
+  keywords: [
+    "café de bureau",
+    "OCS Abidjan",
+    "Office Coffee Service",
+    "machine à café entreprise",
+    "café bureau Côte d'Ivoire",
+    "distributeur café Abidjan",
+    "thé entreprise Abidjan",
+    "TERREDECAFE",
+    "fournisseur café bureau",
+    "maintenance machine café",
+  ],
+  logo: "/logo.png",
+  logoWhite: "/logo-white.png",
+  ogImage: "/og-image.png",
+} as const;

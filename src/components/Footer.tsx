@@ -1,17 +1,23 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-brown-900 py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brown-600 text-lg font-bold text-white">
-                T
-              </span>
+            <a href="#accueil" className="inline-flex items-center gap-3">
+              <Image
+                src="/logo-white.png"
+                alt="Logo TERREDECAFE"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover ring-1 ring-white/20"
+              />
               <span className="font-serif text-2xl font-semibold text-white">
                 TERREDECAFE
               </span>
-            </div>
+            </a>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               Fournisseur de services de café de bureau (OCS) à Abidjan, Côte
               d&apos;Ivoire. Passion, qualité et service d&apos;excellence.

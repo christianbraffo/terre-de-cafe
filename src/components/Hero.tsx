@@ -11,7 +11,7 @@ export default function Hero() {
     <section id="accueil" className="relative min-h-screen w-full overflow-hidden">
       <Image
         src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80"
-        alt="Tasse de café fumante sur un bureau"
+        alt="Café de bureau TERREDECAFE — tasse de café fumante pour entreprises à Abidjan"
         fill
         priority
         className="object-cover"
@@ -24,6 +24,7 @@ export default function Hero() {
           Café de bureau · OCS · Abidjan
         </p>
         <h1 className="font-serif text-5xl font-bold leading-tight text-white md:text-7xl">
+          <span className="sr-only">TERREDECAFE — </span>
           <span className="animate-hero-fade block" style={{ animationDelay: "200ms" }}>
             Une bonne tasse de café
           </span>

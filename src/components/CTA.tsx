@@ -69,33 +69,56 @@ export default function CTA() {
           className="mx-auto mt-12 max-w-xl space-y-4 text-left"
         >
           <div className="grid gap-4 sm:grid-cols-2">
+            <label className="sr-only" htmlFor="devis-name">
+              Nom complet
+            </label>
             <input
+              id="devis-name"
               type="text"
               name="name"
               required
+              autoComplete="name"
               placeholder="Nom complet"
+              aria-label="Nom complet"
               className="w-full rounded-xl border border-white/20 bg-white/5 px-5 py-3.5 text-white placeholder:text-white/40 focus:border-brown-500 focus:outline-none focus:ring-1 focus:ring-brown-500"
             />
+            <label className="sr-only" htmlFor="devis-email">
+              Email professionnel
+            </label>
             <input
+              id="devis-email"
               type="email"
               name="email"
               required
+              autoComplete="email"
               placeholder="Email professionnel"
+              aria-label="Email professionnel"
               className="w-full rounded-xl border border-white/20 bg-white/5 px-5 py-3.5 text-white placeholder:text-white/40 focus:border-brown-500 focus:outline-none focus:ring-1 focus:ring-brown-500"
             />
           </div>
+          <label className="sr-only" htmlFor="devis-company">
+            Entreprise
+          </label>
           <input
+            id="devis-company"
             type="text"
             name="company"
             required
+            autoComplete="organization"
             placeholder="Entreprise"
+            aria-label="Entreprise"
             className="w-full rounded-xl border border-white/20 bg-white/5 px-5 py-3.5 text-white placeholder:text-white/40 focus:border-brown-500 focus:outline-none focus:ring-1 focus:ring-brown-500"
           />
+          <label className="sr-only" htmlFor="devis-message">
+            Décrivez vos besoins
+          </label>
           <textarea
+            id="devis-message"
             name="message"
             required
             placeholder="Décrivez vos besoins..."
             rows={4}
+            aria-label="Décrivez vos besoins"
             className="w-full resize-none rounded-xl border border-white/20 bg-white/5 px-5 py-3.5 text-white placeholder:text-white/40 focus:border-brown-500 focus:outline-none focus:ring-1 focus:ring-brown-500"
           />
           <button
